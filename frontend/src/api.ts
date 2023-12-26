@@ -32,7 +32,7 @@ export const request = async <T>(
   path: string,
   init?: RequestInit
 ): Promise<T> => {
-  const ret = await fetch(`http://localhost:8000/${path}`, init);
+  const ret = await fetch(path, init);
   if (!ret.ok) {
     throw new Error("Request failed");
   }
@@ -53,10 +53,8 @@ export const generateSuspended = <T>(
   };
 };
 
-const apiPort = 8000;
-
 export const requestGetContacts = async () => {
-  const ret = await fetch(`http://localhost:${apiPort}/contacts`);
+  const ret = await fetch(`/api/contacts`);
   if (!ret.ok) {
     throw new Error("Request failed");
   }

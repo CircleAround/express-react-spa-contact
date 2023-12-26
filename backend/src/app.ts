@@ -17,7 +17,7 @@ app.use(cookieParser());
 app.use(cors())
 
 app.use("/", indexRouter);
-app.use("/contacts", contactsRouter);
+app.use("/api/contacts", contactsRouter);
 
 app.use(function (req, res, next) {
   next(createError(404));
