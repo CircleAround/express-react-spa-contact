@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "DEBUG=express-react-spa-contact:* ts-node-dev ./src/bin/www",
+    "dev": "cross-env DEBUG=express-react-spa-contact:* ts-node-dev ./src/bin/www",
     "db:migrate": "prisma migrate dev",
     "db:seed": "prisma db seed",
     "db:admin": "prisma studio"
@@ -13,6 +13,7 @@
     "@prisma/client": "^5.5.2",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "debug": "~2.6.9",
     "ejs": "^3.1.9",
     "express": "~4.16.1",
