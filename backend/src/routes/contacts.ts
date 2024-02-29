@@ -4,6 +4,8 @@ import { getPrismaCilent } from "../lib/prisma-util";
 const prisma = getPrismaCilent();
 const router = express.Router();
 
+const take = 25;
+
 router.get("/", async (req, res, next) => {
   try {
     const page = req.query["page"] ? Number(req.query["page"] as string) : 1;
