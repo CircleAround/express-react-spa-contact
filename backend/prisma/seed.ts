@@ -21,6 +21,15 @@ async function main() {
   });
   console.log({ taro, jiro });
 
+  {
+    // createMany is not supported on SQLite
+    for (let i = 0; i < 100; i++) {
+      await prisma.contact.create({
+        data: { name: `user${i}`, email: `email${i}@example.com` },
+      });
+    }
+  }
+
   const personal = await prisma.category.upsert({
     where: { name: "personal" },
     update: {},
